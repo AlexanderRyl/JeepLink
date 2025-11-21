@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JeepLink | Smart Transport for Baguio</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="ASSET/favicon.png">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- ICONS (Phosphor Icons for modern look) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- MAP STYLES -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- YOUR STYLES -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header id="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="ASSET/logo.png" alt="JeepLink" class="logo-img">
+                <span>JeepLink</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <!-- Nav Links -->
+            <nav class="main-nav" id="nav-links">
+                <a href="#hero">Home</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="dropdown">
+                    <button class="dropbtn">Explore <i class="ph ph-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#about">Our Mission</a>
+                        <a href="#features">Key Features</a>
+                        <a href="#team">The Team</a>
+                    </div>
+                </div>
+
+                <a href="#livemap">Live Map</a>
+                <a href="#contact" class="button-primary">Partner with Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 
+           HERO SECTION: THE "LOOP WRAPPER" ANIMATION 
+           Updated: Right-Facing Jeepney with Better Details
+        -->
+        <section id="hero">
+            <div class="loop-wrapper">
+                <div class="mountain"></div>
+                <div class="hill"></div>
+                <div class="tree"></div>
+                <div class="tree"></div>
+                <div class="tree"></div>
+                <div class="rock"></div>
+                
+                <!-- The Flat Design Jeepney (Now Facing Right) -->
+                <div class="jeepney-container">
+                    <!-- Roof (Yellow) -->
+                    <div class="jeepney-roof"></div>
+                    <!-- Body (White) -->
+                    <div class="jeepney-body"></div>
+                    <!-- Hood/Fender (Blue - Right Side) -->
+                    <div class="jeepney-fender"></div>
+                    <!-- Headlight -->
+                    <div class="jeepney-headlight"></div>
+                    <!-- Spare Tire (Side) -->
+                    <div class="spare-tire"></div>
+                    <!-- Wheels -->
+                    <div class="wheel back"></div>
+                    <div class="wheel front"></div>
+                </div> 
+            </div>
+
+            <!-- Hero Text Overlay -->
+            <div class="container hero-text-layer">
+                <span class="hero-badge">Now Live in Baguio City</span>
+                <h1>The Future of <br><span>Cordillera Transport</span></h1>
+                <p>
+                    Experience the first fully integrated fleet management system designed specifically for the topography and culture of Baguio.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#livemap" class="button-primary">View Dashboard</a>
+                    <a href="#features" class="button-outline">How it Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATISTICS STRIP -->
+        <div class="stats-strip">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Units Registered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Uptime Reliability</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Real-time Tracking</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT / CONTEXT SECTION -->
+        <section id="about">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="text-content">
+                        <h2 class="section-title">Preserving Culture, <br>Upgrading Efficiency.</h2>
+                        <p class="lead-text">The Jeepney is more than a vehicle; it's a symbol of Filipino ingenuity. But the old system is struggling to keep up with modern demands.</p>
+                        <p>JeepLink bridges this gap. We provide the digital infrastructure—GPS, automated payroll, and ridership analytics—that allows traditional cooperatives to compete with modern taxi services and ride-hailing apps, all while keeping the iconic Jeepney on the road.</p>
+                        
+                        <ul class="check-list">
+                            <li><i class="ph ph-check-circle"></i> LPTRP Compliant Tracking</li>
+                            <li><i class="ph ph-check-circle"></i> Automated Cooperative Reports</li>
+                            <li><i class="ph ph-check-circle"></i> Driver Safety Monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <!-- Placeholder for a high-quality Baguio Street Scene -->
+                        <div class="image-card">
+                            <img src="https://placehold.co/600x500/3B82F6/FFFFFF/png?text=Baguio+Street+Scene" alt="Baguio Transport">
+                            <div class="floating-card">
+                                <i class="ph ph-chart-line-up"></i>
+                                <span>Efficiency +40%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE MAP SECTION -->
+        <section id="livemap">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title">Fleet Command Center</h2>
+                    <p>A real-time view of the Baguio transport network.</p>
+                </div>
+
+                <div class="dashboard-preview">
+                    <div class="map-wrapper">
+                        <div id="map"></div>
+                        <!-- UI Overlay on Map -->
+                        <div class="map-overlay-ui">
+                            <div class="status-indicator">
+                                <span class="dot pulse"></span> System Online
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES GRID -->
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title center">Engineered for Cooperatives</h2>
+                <div class="features-grid-modern">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="ph ph-globe-hemisphere-west"></i></div>
+                        <h3>Precision GPS</h3>
+                        <p>Track every unit with meter-level accuracy, specifically tuned for Baguio's mountainous terrain where signal often drops.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="ph ph-bank"></i></div>
+                        <h3>Bank-Ready Audits</h3>
+                        <p>Generate LANDBANK-compliant financial reports instantly. Prove solvency and secure funding for fleet modernization.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="ph ph-qr-code"></i></div>
+                        <h3>Unified Payments</h3>
+                        <p>Accept GCash, Maya, and Beep cards. Reduce cash handling risks and speed up passenger boarding.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM SECTION -->
+        <section id="team">
+            <div class="container">
+                <h2 class="section-title center">Built by Students, <br>For the City.</h2>
+                <div class="team-row">
+                    <!-- Member 1 -->
+                    <div class="team-profile">
+                        <div class="profile-img">
+                            <img src="https://placehold.co/150x150/3B82F6/FFFFFF/png?text=L" alt="Leader">
+                        </div>
+                        <h4>Juan D.</h4>
+                        <span>Project Lead</span>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="team-profile">
+                        <div class="profile-img">
+                            <img src="https://placehold.co/150x150/3B82F6/FFFFFF/png?text=D" alt="Dev">
+                        </div>
+                        <h4>Maria C.</h4>
+                        <span>Developer</span>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="team-profile">
+                        <div class="profile-img">
+                            <img src="https://placehold.co/150x150/3B82F6/FFFFFF/png?text=U" alt="UX">
+                        </div>
+                        <h4>Jose R.</h4>
+                        <span>Designer</span>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="team-profile">
+                        <div class="profile-img">
+                            <img src="https://placehold.co/150x150/3B82F6/FFFFFF/png?text=A" alt="Analyst">
+                        </div>
+                        <h4>Andres B.</h4>
+                        <span>Analyst</span>
+                    </div>
+                     <!-- Member 5 -->
+                     <div class="team-profile">
+                        <div class="profile-img">
+                            <img src="https://placehold.co/150x150/3B82F6/FFFFFF/png?text=R" alt="Research">
+                        </div>
+                        <h4>Gabriela S.</h4>
+                        <span>Research</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container footer-layout">
+                <div class="foot-col">
+                    <h3 class="logo-text">JeepLink</h3>
+                    <p>University of the Cordilleras<br>Gov. Pack Road, Baguio City</p>
+                </div>
+                <div class="foot-col">
+                    <h4>Platform</h4>
+                    <a href="#">Login</a>
+                    <a href="#">Register Coop</a>
+                    <a href="#">Driver App</a>
+                </div>
+                <div class="foot-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                &copy; 2025 JeepLink. All rights reserved.
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="SCRIPTS/app.js"></script>
+    <script>
+        // Simple Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
