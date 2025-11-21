@@ -1,9 +1,0 @@
-/*
- * MAIN.CSS
- * The central hub that imports all other modules.
- */
-
-@import 'BASE/global.css';
-@import 'BORDER/layout.css';
-@import 'ANIM/animations.css';
-@import 'UI/components.css';
