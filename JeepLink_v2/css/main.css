@@ -1,0 +1,13 @@
+@import "base/_variables.css";
+
+/* Components */
+@import "components/_nav.css";
+@import "components/_hero.css";
+@import "components/_buttons.css"; /* We will make this next, but link it now */
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-main);
+}

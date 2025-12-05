@@ -1,0 +1,26 @@
+:root {
+  /* Brand Colors */
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --accent: #f59e0b;
+
+  /* Neutral Colors */
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-white: #ffffff;
+  --bg-off: #f8fafc;
+
+  /* Dimensions */
+  --nav-height: 70px;
+  --border-radius: 12px;
+}
+
+/* Dark Mode Support (Future Proofing) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --bg-white: #0f172a;
+    --bg-off: #1e293b;
+  }
+}
