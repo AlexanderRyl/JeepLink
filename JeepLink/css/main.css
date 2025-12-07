@@ -1,0 +1,404 @@
+/* * MAIN.CSS - UPDATED
+ * ----------------------------
+ * Purpose: Central stylesheet for the Professional Revamp.
+ */
+
+/* --- 1. VARIABLES & RESET --- */
+:root {
+  /* Brand Colors */
+  --primary: #3b82f6; /* Trust Blue */
+  --primary-dark: #1e40af; /* Deep Blue */
+  --accent: #f59e0b; /* Jeepney Amber */
+  --text-main: #1f2937; /* Dark Gray */
+  --text-muted: #6b7280; /* Soft Gray */
+  --bg-white: #ffffff;
+  --bg-off: #f3f4f6; /* Light Gray Background */
+  --nav-height: 80px;
+
+  /* Layout Constraints */
+  --container-max: 1200px;
+  --gutter: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* New: Smooth Scrolling */
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  padding-top: var(--nav-height);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+}
+p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* --- 2. LAYOUT UTILITIES --- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  width: 100%;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --- 3. NAVIGATION (Glass & Premium) --- */
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  box-shadow: 0 4px 20px -10px rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+}
+.logo img {
+  height: 48px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  position: relative;
+}
+.nav-links a.active {
+  color: var(--primary);
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Nav Button (New) */
+#mobile-menu-trigger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+  #mobile-menu-trigger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    right: 0;
+    width: 80%; /* Partial width */
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+}
+
+/* --- 4. HERO SECTION --- */
+#hero {
+  position: relative;
+  height: 85vh;
+  min-height: 600px;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("../assets/images/ui/jeepney3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.hero-content {
+  max-width: 700px;
+  animation: slideUp 1s ease-out;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-desc {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.btn-main {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.5);
+}
+.btn-main:hover {
+  transform: translateY(-3px);
+  background: var(--primary-dark);
+}
+
+/* --- 5. "FILM STRIP" CAROUSEL --- */
+.film-strip-section {
+  background: #111827;
+  padding: 80px 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 10px solid var(--accent);
+  border-bottom: 10px solid var(--accent);
+}
+
+.film-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: scrollFilm 60s linear infinite;
+}
+
+/* New: Pause on Hover */
+.film-track:hover {
+  animation-play-state: paused;
+}
+
+.film-frame {
+  width: 400px;
+  height: 280px;
+  position: relative;
+  border-right: 8px solid #111827;
+  background: black;
+}
+
+.film-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.3s;
+  filter: grayscale(100%);
+}
+
+.film-frame:hover img {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.frame-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+
+.film-frame:hover .frame-caption {
+  transform: translateY(0);
+}
+
+@keyframes scrollFilm {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- 6. TEAM SECTION --- */
+.team-card-pro {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.team-card-pro:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo-wrapper {
+  height: 120px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  object-fit: cover;
+}
+
+.team-info h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+.team-role {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- 7. SOURCE CITATION --- */
+.source-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  opacity: 0.6;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .film-frame {
+    width: 300px;
+    height: 200px;
+  }
+  .source-list {
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

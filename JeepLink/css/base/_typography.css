@@ -1,0 +1,75 @@
+/* * _TYPOGRAPHY.CSS
+ * ---------------
+ * Purpose: Loads local font files so they work OFFLINE.
+ * We use @font-face to link the .woff2 files in assets/fonts/
+ * * Path Logic: ../../assets/fonts/ points to JeepLink/assets/fonts/
+ */
+
+/* INTER (Body Text) - Clean, modern sans-serif */
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/inter-v20-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/inter-v20-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/inter-v20-latin-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* RUBIK (Headings) - Friendly, rounded sans-serif */
+@font-face {
+  font-family: "Rubik";
+  src: url("../../assets/fonts/rubik-v31-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../../assets/fonts/rubik-v31-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../../assets/fonts/rubik-v31-latin-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* LORA (Accents/Storytelling) - Elegant serif for research text */
+@font-face {
+  font-family: "Lora";
+  src: url("../../assets/fonts/lora-v37-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../../assets/fonts/lora-v37-latin-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../../assets/fonts/lora-v37-latin-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

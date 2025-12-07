@@ -1,0 +1,78 @@
+/* * _FOOTER.CSS
+ * -----------
+ * Purpose: Styles for the bottom footer area.
+ * Includes social proof and source citations.
+ */
+
+footer {
+  background: var(--bg-dark); /* Deep Slate */
+  color: #94a3b8; /* Muted text */
+  padding: 80px 0 30px 0;
+  font-family: var(--font-body);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+/* Brand Section */
+.footer-brand {
+  margin-bottom: 20px;
+}
+
+.footer-brand img {
+  height: 50px;
+  margin: 0 auto 15px auto;
+  filter: brightness(0) invert(1); /* Turn logo white */
+  opacity: 0.9;
+}
+
+.footer-brand h3 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Address & Info */
+.footer-info p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Source List (Social Proof) */
+.source-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.source-item {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: 0.3s;
+  cursor: default;
+}
+
+.source-item:hover {
+  color: var(--primary-light);
+}
+
+/* Copyright Bar */
+.copyright {
+  margin-top: 50px;
+  font-size: 0.8rem;
+  color: #475569;
+}

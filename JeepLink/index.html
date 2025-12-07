@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JeepLink: Modernizing Baguio City's transport with organized dispatching and commuter safety systems."
+    />
+    <meta
+      name="keywords"
+      content="Baguio, Jeepney, Transport, Smart City, Commute, App"
+    />
+    <title>JeepLink | Transforming Cordillera Transport</title>
+
+    <!-- Local Assets -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/branding/favicon.png"
+    />
+    <link rel="stylesheet" href="assets/vendor/leaflet.css" />
+    <link rel="stylesheet" href="assets/vendor/phosphor.css" />
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- 1. HEADER -->
+    <header id="main-header">
+      <div class="container header-inner">
+        <a href="#" class="logo">
+          <img src="assets/images/branding/favicon.png" alt="JeepLink" />
+          <span>JeepLink</span>
+        </a>
+
+        <!-- Mobile Menu Button (New) -->
+        <button id="mobile-menu-trigger" aria-label="Toggle Menu">
+          <i class="ph-list" style="font-size: 1.5rem"></i>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="#hero" class="active">Home</a>
+          <a href="#mission">Our Mission</a>
+          <a href="#driving-force">The Driving Force</a>
+          <a href="#team">The Team</a>
+          <a href="#contact" style="color: var(--primary)">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-tag">System Version 2.0 Live</span>
+          <h1 class="hero-title">
+            Preserving Culture. <br />
+            Modernizing the Ride.
+          </h1>
+          <p class="hero-desc">
+            We aren't just tracking jeepneys. We are building the digital
+            infrastructure that allows traditional cooperatives to compete in
+            the modern smart city era. From the winding roads of Bakakeng to the
+            heart of the Plaza.
+          </p>
+          <div class="hero-btns">
+            <a href="#driving-force" class="btn-main">Explore the Platform</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MISSION STATEMENT -->
+    <section id="mission" class="section-padding">
+      <div class="container">
+        <div class="grid-2">
+          <div class="text-content">
+            <h4
+              style="
+                color: var(--primary);
+                text-transform: uppercase;
+                margin-bottom: 10px;
+              "
+            >
+              The Core Problem
+            </h4>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px">
+              Why the System Needs Fixing
+            </h2>
+            <p>
+              Baguio City faces a unique challenge. The "Bowl" topography traps
+              emissions, while the fragmented franchising system causes chaotic
+              traffic flow. Drivers are forced to race for passengers due to the
+              "Boundary System," risking safety for survival.
+            </p>
+            <p>
+              JeepLink bridges this gap. By digitizing the fleet, we enable
+              organized dispatching, automated payroll, and predictable
+              intervals—giving dignity back to the driver and reliability to the
+              commuter.
+            </p>
+          </div>
+          <div class="image-content">
+            <img
+              src="assets/images/ui/pila1.jpg"
+              alt="Commuter Line"
+              loading="lazy"
+              style="
+                border-radius: 16px;
+                box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+              "
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. THE FILM STRIP CAROUSEL -->
+    <section id="driving-force" class="film-strip-section">
+      <div
+        class="container text-center"
+        style="margin-bottom: 50px; color: white"
+      >
+        <h2 style="font-size: 2.5rem">The Reality of the Road</h2>
+        <p style="opacity: 0.8">
+          Documenting the daily life of Baguio's transport sector.
+        </p>
+      </div>
+
+      <div class="film-track">
+        <div class="film-frame">
+          <img
+            src="assets/images/ui/jeepney4.jpg"
+            alt="Jeepney Art"
+            loading="lazy"
+          />
+          <div class="frame-caption">
+            <h4>Cultural Icon</h4>
+            <p>The aesthetic of the road.</p>
+          </div>
+        </div>
+        <div class="film-frame">
+          <img src="assets/images/ui/sabit1.jpg" alt="Sabit" loading="lazy" />
+          <div class="frame-caption">
+            <h4>Safety Challenges</h4>
+            <p>Why we need modernization.</p>
+          </div>
+        </div>
+        <div class="film-frame">
+          <img
+            src="assets/images/ui/commuters1.jpg"
+            alt="Inside View"
+            loading="lazy"
+          />
+          <div class="frame-caption">
+            <h4>The Passenger</h4>
+            <p>Daily commute stories.</p>
+          </div>
+        </div>
+        <div class="film-frame">
+          <img src="assets/images/ui/driver1.jpg" alt="Driver" loading="lazy" />
+          <div class="frame-caption">
+            <h4>The Operator</h4>
+            <p>The backbone of the system.</p>
+          </div>
+        </div>
+        <div class="film-frame">
+          <img src="assets/images/ui/pila1.jpg" alt="Queue" loading="lazy" />
+          <div class="frame-caption">
+            <h4>Demand & Supply</h4>
+            <p>Managing the rush hour.</p>
+          </div>
+        </div>
+
+        <!-- Duplicate for Infinite Loop -->
+        <div class="film-frame">
+          <img
+            src="assets/images/ui/jeepney4.jpg"
+            alt="Jeepney Art"
+            loading="lazy"
+          />
+          <div class="frame-caption">
+            <h4>Cultural Icon</h4>
+            <p>The aesthetic of the road.</p>
+          </div>
+        </div>
+        <div class="film-frame">
+          <img src="assets/images/ui/sabit1.jpg" alt="Sabit" loading="lazy" />
+          <div class="frame-caption">
+            <h4>Safety Challenges</h4>
+            <p>Why we need modernization.</p>
+          </div>
+        </div>
+        <div class="film-frame">
+          <img
+            src="assets/images/ui/commuters1.jpg"
+            alt="Inside View"
+            loading="lazy"
+          />
+          <div class="frame-caption">
+            <h4>The Passenger</h4>
+            <p>Daily commute stories.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TEAM SECTION -->
+    <section
+      id="team"
+      class="section-padding"
+      style="background: var(--bg-off)"
+    >
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px">
+          <h2 style="font-size: 2.5rem">Built by Students, For the City</h2>
+          <p>The dedicated team behind the JeepLink initiative.</p>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+          "
+        >
+          <!-- Enthus -->
+          <div class="team-card-pro">
+            <div class="team-photo-wrapper">
+              <img
+                src="assets/images/team/picture1.png"
+                class="team-avatar"
+                alt="Enthus"
+                loading="lazy"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Enthus B.</h3>
+              <span class="team-role">Project Lead</span>
+            </div>
+          </div>
+          <!-- Daryl -->
+          <div class="team-card-pro">
+            <div class="team-photo-wrapper">
+              <img
+                src="assets/images/team/picture2.png"
+                class="team-avatar"
+                alt="Daryl"
+                loading="lazy"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Daryl G.</h3>
+              <span class="team-role">Lead Developer</span>
+            </div>
+          </div>
+          <!-- Rysvijk -->
+          <div class="team-card-pro">
+            <div class="team-photo-wrapper">
+              <img
+                src="assets/images/team/picture3.png"
+                class="team-avatar"
+                alt="Rysvijk"
+                loading="lazy"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Rysvijk L.</h3>
+              <span class="team-role">UI/UX Designer</span>
+            </div>
+          </div>
+          <!-- Miguel -->
+          <div class="team-card-pro">
+            <div class="team-photo-wrapper">
+              <img
+                src="assets/images/team/picture4.png"
+                class="team-avatar"
+                alt="Miguel"
+                loading="lazy"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Miguel L.</h3>
+              <span class="team-role">Systems Analyst</span>
+            </div>
+          </div>
+          <!-- Vince -->
+          <div class="team-card-pro">
+            <div class="team-photo-wrapper">
+              <img
+                src="assets/images/team/picture5.png"
+                class="team-avatar"
+                alt="Vince"
+                loading="lazy"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Vince M.</h3>
+              <span class="team-role">Head of Research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer style="background: #111827; color: white; padding: 60px 0">
+      <div class="container text-center">
+        <div style="margin-bottom: 30px">
+          <img
+            src="assets/images/branding/logo.png"
+            style="
+              height: 300px;
+              margin: 0 auto;
+              filter: brightness(0) invert(1);
+            "
+            alt="Logo"
+            loading="lazy"
+          />
+        </div>
+
+        <p style="opacity: 0.6">
+          Saint Louis University - Maryheights Campus<br />School of Computing
+          and Information Sciences
+        </p>
+
+        <div class="source-list">
+          <span>Sources:</span>
+          <span>Unsplash</span>
+          <span>Pexels</span>
+          <span>Shutterstock (Royalty Free)</span>
+          <span>Pinterest (References)</span>
+          <span>Local Field Research</span>
+        </div>
+
+        <div
+          style="
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.4;
+          "
+        >
+          &copy; 2025 JeepLink Project. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts (Unified for Offline Compatibility) -->
+    <script src="assets/vendor/leaflet.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
