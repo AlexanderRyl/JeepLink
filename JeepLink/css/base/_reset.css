@@ -1,0 +1,56 @@
+/* * _RESET.CSS
+ * ----------
+ * Purpose: Neutralize browser inconsistencies.
+ * Ensures the site looks the same on Chrome, Firefox, and Safari.
+ */
+
+/* Apply box-sizing to everything */
+* {
+  box-sizing: border-box; /* Padding doesn't increase element width */
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth; /* Animate jumps when clicking anchor links */
+}
+
+/* Body Defaults */
+body {
+  margin: 0; /* Remove default browser margin */
+  padding-top: var(
+    --nav-height
+  ); /* Prevent content from hiding behind fixed nav */
+  font-family: "Inter", sans-serif; /* Set default font stack */
+  background-color: var(--bg-white); /* Set default background */
+  color: var(--text-main); /* Set default text color */
+  line-height: 1.6; /* Improve readability */
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+/* Typography Resets */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; /* Remove default margins */
+  font-family: "Rubik", sans-serif; /* Headings use Rubik font */
+}
+
+p {
+  margin-bottom: 1rem; /* Add spacing below paragraphs */
+}
+
+/* Link Resets */
+a {
+  text-decoration: none; /* Remove underlines */
+  color: inherit; /* Inherit color from parent */
+  transition: 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Image Resets */
+img {
+  max-width: 100%; /* Prevent images from overflowing containers */
+  display: block; /* Remove bottom gap in inline images */
+}

@@ -1,0 +1,34 @@
+/* * _VARIABLES.CSS
+ * --------------
+ * Purpose: Defines CSS Custom Properties (Variables).
+ * Changing a color here updates it across the entire website instantly.
+ */
+
+:root {
+  /* --- BRAND COLORS --- */
+  --primary: #3b82f6; /* Main Blue - Used for buttons, links, active states */
+  --primary-dark: #2563eb; /* Darker Blue - Used for hover states */
+  --accent: #f59e0b; /* Amber/Orange - Used for highlights or warnings */
+
+  /* --- NEUTRAL COLORS --- */
+  --text-main: #1e293b; /* Dark Slate - Main body text color (easier on eyes than black) */
+  --text-muted: #64748b; /* Gray - Secondary text, captions, descriptions */
+  --bg-white: #ffffff; /* Pure White - Card backgrounds, main sections */
+  --bg-off: #f8fafc; /* Off-White - Alternating section backgrounds */
+
+  /* --- DIMENSIONS & SPACING --- */
+  --nav-height: 70px; /* Fixed height for the navbar to calculate padding */
+  --border-radius: 12px; /* Standard corner roundness for cards/inputs */
+  --container-width: 1100px; /* Max width for the main content area */
+}
+
+/* --- DARK MODE SUPPORT (Future Proofing) --- */
+/* Purpose: If the user's OS is set to Dark Mode, these variables override the defaults above. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-main: #f1f5f9; /* Light Gray for text on dark backgrounds */
+    --text-muted: #94a3b8; /* Softer Gray for secondary text */
+    --bg-white: #0f172a; /* Dark Blue/Slate for backgrounds */
+    --bg-off: #1e293b; /* Slightly lighter dark for contrast */
+  }
+}

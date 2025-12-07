@@ -1,0 +1,80 @@
+/* * _HERO.CSS
+ * ---------
+ * Purpose: Styles the main landing section.
+ * Uses a parallax background image for a premium feel.
+ */
+
+#hero {
+  position: relative;
+  height: 90vh; /* Take up 90% of viewport height */
+  min-height: 600px; /* Don't shrink too small on laptops */
+  display: flex; /* Flexbox for centering content */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* Text color on dark background */
+  overflow: hidden;
+
+  /* The Parallax Magic */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    /* Dark overlay for text readability */
+      url("../../assets/images/ui/jeepney3.jpg"); /* The Hero Image */
+  background-size: cover; /* Ensure image covers area */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Freezes image while scrolling (Parallax) */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Place above background */
+  padding: 0 20px;
+  max-width: 800px;
+  animation: fadeUp 1s ease-out; /* Trigger entrance animation */
+}
+
+/* The "Now Live" Pill Badge */
+.hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.15); /* Frosted glass look */
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Hero Heading */
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive font sizing */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-family: "Rubik", sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Legibility shadow */
+}
+
+.hero-content h1 span {
+  color: #60a5fa; /* Light Blue Accent color */
+  display: block; /* Force new line */
+}
+
+/* Hero Description */
+.hero-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button Group */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
